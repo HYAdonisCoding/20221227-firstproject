@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>图表</title>
-    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <title>Future</title>
+
 </head>
 <body>
-<h1>第一个项目</h1>
-<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png">
+<h1>Where is the Future?</h1>
+<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" style="width: 100px;">
+<div>世上任何有价值的东西与有意义的事，都需要用辛劳、痛苦与煎熬换取。此生，我从未羡慕过任何安稳无忧的人，但我羡慕那些遭遇困苦但能从容应对的人。</div>
+<div>Anything valuable and meaningful in the world needs to be exchanged with hard work, pain and suffering. In this life, I have never envied anyone who is safe and secure, but I envy those who can handle difficulties calmly.</div>
+
+
+<h1>Learning energy</h1>
 <div id="main" style="width: 600px;height:400px;"></div>
 </body>
-
+<script src="js/echarts.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>-->
 <script>
+    // import * as echarts from 'echarts';
     var chartDom = document.getElementById('main');
     var myChart = echarts.init(chartDom);
     var option;
 
     option = {
         title: {
-            text: 'Referer of a Website',
-            subtext: 'Fake Data',
+            text: 'Referer of Future Study',
+            subtext: 'Technology Data',
             left: 'center'
         },
         tooltip: {
@@ -31,15 +38,15 @@
         },
         series: [
             {
-                name: 'Access From',
+                name: 'Study From',
                 type: 'pie',
                 radius: '50%',
                 data: [
-                    { value: 1048, name: 'Search Engine' },
-                    { value: 735, name: 'Direct' },
-                    { value: 580, name: 'Email' },
-                    { value: 484, name: 'Union Ads' },
-                    { value: 300, name: 'Video Ads' }
+                    { value: 500, name: 'Java' },
+                    { value: 450, name: 'H5' },
+                    { value: 450, name: 'iOS' },
+                    { value: 400, name: 'Python' },
+                    { value: 300, name: 'others' }
                 ],
                 emphasis: {
                     itemStyle: {
