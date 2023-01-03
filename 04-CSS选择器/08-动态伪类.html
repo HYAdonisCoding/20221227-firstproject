@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-动态伪类</title>
+    <style>
+        a:link {
+        /*    未访问的链接*/
+            color: #F6C12A;
+        }
+        a:visited {
+            /*已访问的链接*/
+            color: #00FF00;
+        }
+        a:hover {
+            /*当鼠标移动到连接上*/
+            color: #57B5E3;
+        }
+        a:active {
+            /*被激活的链接，当鼠标左键单机链接时未松开*/
+            color: #FF00FF;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #F00;
+        }
+        div:hover {
+            background-color: #0F0;
+        }
+        div:active {
+            background-color: #00F;
+        }
+        input:focus {
+            color: red;
+        }
+        a:focus {
+            color: yellow;
+        }
+        a:active {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--https://inews.gtimg.com/newsapp_bt/0/1226172028152_9054/0-->
+
+<a href="https://www.qq.com">腾讯新闻</a>
+<input type="text"><br>
+<input type="text">
+<a href="#">链接1</a>
+
+<a href="#">链接2</a>
+
+<a href="#">链接3</a>
+<div>I am div</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-选择器练习_01</title>
+    <style>
+        input[type="text"], textarea {
+            color: #D73D32;
+        }
+        /*选择器练习_02*/
+        /*div.box>p>strong>span[title="one"]>span>strong#cat~em {*/
+        /*    color: #0FF;*/
+        /*}*/
+        /*div.box span[title="one"] strong#cat~em {*/
+        /*    color: #00FF00;*/
+        /*}*/
+        /*.box [title="one"] #cat~em {*/
+        /*    color: #F6C12A;*/
+        /*}*/
+        #cat~em {
+            color: #57B5E3;
+        }
+    </style>
+</head>
+<body>
+<h2>选择器练习_01</h2>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+
+<input type="button">
+
+<input type="checkbox">
+
+<input type="color">
+
+<textarea></textarea>
+
+<h2>选择器练习_02</h2>
+<div><em>I am em0</em></div>
+
+<div class="box">
+    <div><p>paper</p></div>
+    <p>
+        <span></span>
+        <strong>
+            <span title="one">
+                <strong id="dog">strong - dog</strong>
+                <span>
+                    <em>I am em1</em>
+                    <strong id="cat">strong - cat</strong>
+                    <em>I am em2</em>
+                    <em>I am em3</em>
+                    <em>I am em4</em>
+                </span>
+            </span>
+        </strong>
+    </p>
+</div>
+</body>
+</html>

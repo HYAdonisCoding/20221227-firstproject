@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-@font-face</title>
+    <style>
+        @font-face {
+            src: url("fonts/mini_cut.ttf");
+            font-family: "迷你剪纸";
+        }
+        div {
+            font-family: "Courier", "迷你剪纸", "华文仿宋";
+            font-size: 2em;
+            font-weight: normal;
+
+        }
+        span {
+            font-weight: bold;
+        }
+        p {
+            font-weight: normal;
+            font-style: normal;
+        }
+        em {
+            font-style: italic;
+        }
+        a {
+            font-variant: small-caps;
+        }
+        ins {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<h2>font-face</h2>
+<div>
+    i am div, I hope the world have no war<br>
+    我希望世界没有战争
+    <br>
+    <span>i am span, I hope world</span>
+    <p>i am p, I hope the world have no war<br>
+        我希望世界没有战争</p>
+    <em>i am em, I hope the world have no war<br>
+        我希望世界没有战争</em>
+    <br>
+    <a>i am a, I hope the world have no war<br>
+        我希望世界没有战争</a>
+    <br>
+    <ins>i am ins, I hope the world have no war<br>
+        我希望世界没有战争</ins>
+</div>
+</body>
+</html>

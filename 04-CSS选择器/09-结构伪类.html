@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-结构伪类</title>
+    <style>
+        /* span元素 并且它是父元素中的第3个子元素 */
+        /* an + b, a = 0, b = 3*/
+        /*span:nth-child(3) {*/
+        /*    color: #FF00FF;*/
+        /*}*/
+
+        /*span:nth-child(2n) {*/
+        /*    color: #57B5E3;*/
+        /*}*/
+
+        /*span:nth-child(3n) {*/
+        /*    color: #00FF00;*/
+        /*}*/
+        /*span:nth-child(even) {*/
+        /*    !*偶数*!*/
+        /*    color: #F6C12A;*/
+        /*}*/
+        span:nth-child(odd) {
+            /*奇数*/
+            color: #F60;
+        }
+        span:nth-child(4n + 1) {
+            background-color: red;
+        }
+        span:nth-child(4n + 2) {
+            background-color: yellow;
+        }
+        span:nth-child(4n + 3) {
+            background-color: green;
+        }
+        span:nth-child(4n + 4) {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<h2>第一组</h2>
+<div>
+    <p>I am p</p>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+    <span>span6</span>
+</div>
+<h2>第二组</h2>
+<div>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+    <span>span6</span>
+</div>
+</body>
+</html>

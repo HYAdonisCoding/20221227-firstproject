@@ -1,5 +1,6 @@
+[TOC]
 # 20221227-firstproject Note
-[toc]
+
 ## 基本 HTML 标签
 ### 网页的基础知识
 
@@ -78,6 +79,10 @@
 - 通用选择器 (universal selector)：* {}
 - id 选择器 (id selectors)：#xxx {}
 - 类选择器 (class selectors)：.xxx {}
+  - 使用class选择器来修改这个项目的好处：
+    1、方便项目维护（需求的更改）
+    2、保证了样式和结构分离
+    3、能够统一修改局部的某一类元素，而不会影响其他元素
   - 类选择器实现多种按钮样式
 - 属性选择器 (attribute selectors)
 

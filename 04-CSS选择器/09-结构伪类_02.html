@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-结构伪类_02</title>
+    <style>
+        div {
+            font-size: 2em;
+        }
+        /* 是它父元素中的第1个span类型的直接子元素 */
+        span:nth-of-type(1) {
+            color: red;
+        }
+
+        span:first-child {
+            color: #00FF00;
+        }
+        span:only-child {
+            color: #F6C12A;
+        }
+        span:only-of-type {
+            color: #57B5E3;
+        }
+
+        :not(p):not(body):not(html) {
+            color: #FF00FF;
+        }
+    </style>
+</head>
+<body>
+<h2>一</h2>
+<div>
+    <p>p1</p>
+    <span>span1</span>
+    <span>span2</span>
+    <p>
+        <span>span66666</span>
+    </p>
+    <p>p2</p>
+    <span>span3</span>
+    <span>span4</span>
+    <p>p3</p>
+    <span>span5</span>
+    <span>span6</span>
+</div>
+<h2>二</h2>
+<div>
+    <p>p1</p>
+    <span>span1</span>
+</div>
+</body>
+</html>

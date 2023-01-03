@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-class选择器-02</title>
+    <style>
+        .btn {
+            color: #FFF;
+            font-size: 18px;
+            padding: 10px 20px 10px 20px;
+            /*
+            设置鼠标样式（鼠标移动到元素上时显示的样子）
+             cursor: pointer是一只小手的样式
+             */
+            cursor: pointer;
+        }
+        .round {
+            border-radius: 5px;
+        }
+
+        .normal {
+            background: #53A93F;
+        }
+        .danger {
+            background: #D73D32;
+        }
+        .warning {
+            background: #F6C12A;
+        }
+        .cancel {
+            background: #57B5E3;
+        }
+        /* 按照大小分类 */
+        .big {
+            font-size: 25px;
+        }
+
+        .small {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<br>
+<span class="btn normal">确定</span>
+<span class="btn danger round">删除</span>
+<span class="btn warning round">重置</span>
+<span class="btn cancel">取消</span>
+<strong class="btn danger small">关闭</strong>
+<strong class="btn normal round big">继续</strong>
+</body>
+</html>

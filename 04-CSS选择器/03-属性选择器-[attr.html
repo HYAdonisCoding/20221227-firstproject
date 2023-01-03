@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-属性选择器-[attr</title>
+    <style>
+
+        [href] {
+            color: #F6C12A;
+        }
+
+        [href$=".zip"] {
+            color: #F00;
+        }
+
+        [href^="mailto:"] {
+            color: #00FF00;
+        }
+
+        [href*="520it.com"] {
+            color: #0F0;
+        }
+        [lang|="zh"] {
+            color: #F00;
+        }
+        body [lang|="en"] {
+            color: #F0F;
+        }
+    </style>
+</head>
+<body>
+<h1>属性选择器-[attr$=val]</h1>
+<a href="http://www.baidu.com/abc.zip">百度</a>
+<a href="http://www.163.com" >网易</a>
+
+<h2>属性选择器-[attr]</h2>
+<a href="http://www.baidu.com">百度</a>
+<a>京东</a>
+<a href="http://www.163.com" >网易</a>
+
+<h2>属性选择器-[attr^=val]</h2>
+<a href="mailto:123456@qq.com" >发邮件1</a>
+
+<a href="mailto:666@qq.com" >发邮件2</a>
+
+
+<h3>属性选择器-[attr$=val]</h3>
+<a href="http://www.520it.com">小码哥官网</a>
+<a href="http://520it.com">小码哥官网</a>
+<a href="http://www.520it.com/aboutus">小码哥官网-关于</a>
+<a href="http://bbs.520it.com">小码哥论坛</a>
+
+<a href="http://www.baidu.com">百度</a>
+
+<h2>属性选择器-[attr竖线=val]</h2>
+
+<!--
+语言代码：zh（汉语）、en（英语）、ja（日语）
+-->
+
+<div lang="zh">我是div</div>
+<div lang="en-US">我是div</div>
+<div lang="en-GB">我是div</div>
+<div lang="zh-TW">我是div</div>
+<div lang="zh-HK">我是div</div>
+</body>
+</html>

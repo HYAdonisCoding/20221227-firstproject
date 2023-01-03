@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-before-after</title>
+    <style>
+        div {
+            background-color: pink;
+            font-size: 1.5em;
+        }
+        /*div::before {*/
+        /*    content: "6666";*/
+        /*    color: #0000FF;*/
+        /*}*/
+        div::after {
+            content: "7777";
+            color: orange;
+        }
+        div::before {
+            content: url("images/5.gif");
+            width: 20px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div>I am div</div>
+
+</body>
+</html>

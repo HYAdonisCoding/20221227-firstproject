@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+div {
+    /*颜色*/
+    color: palevioletred;
+    /*背景色*/
+    background-color: yellowgreen;
+    font-size: 40px;
+}

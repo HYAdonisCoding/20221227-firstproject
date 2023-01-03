@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-attr()</title>
+    <style>
+        div::before {
+            content: attr(class);
+        }
+        a[href^="http"]::after {
+            content: "[ " attr(href) " ]";
+        }
+    </style>
+</head>
+<body>
+<a href="https://www.baidu.com">百度</a><br>
+<a href="https://www.jd.com">京东</a><br>
+<a href="https://www.taobao.com">淘宝</a>
+
+<a href="#">呵呵</a>
+<a>哈哈</a>
+
+<div class="abc">I am fiv</div>
+</body>
+</html>

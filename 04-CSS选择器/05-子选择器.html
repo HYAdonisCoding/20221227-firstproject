@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-子选择器</title>
+    <style>
+        .name>div>#title>p>[title] {
+            color: #D73D32;
+        }
+        div+p strong>span span {
+            color: #F6C12A;
+        }
+        div>span {
+            color: #57B5E3;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+<p>
+    <strong>
+        <span>I am span1
+            <span>
+                <span>
+                    <span>I am span2</span>
+                </span>
+            </span>
+        </span>
+    </strong>
+</p>
+
+<div class="name">
+    <div>
+        <div id="title">
+            <p>
+                <span title="3123">I am span3</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <span>I am span4</span>
+    <span>I am span5</span>
+    <p>
+        <span>I am span6</span>
+        <span>I am span7</span>
+    </p>
+</div>
+</body>
+</html>
