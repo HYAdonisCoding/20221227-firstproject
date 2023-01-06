@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-CSS属性的继承_03</title>
+    <style>
+        div.top {
+            color: #0F0;
+            background-color: #00F;
+            /*不可继承*/
+            width: 100px;
+            height: 100px;
+            border: 5px solid #000;
+
+        }
+
+        p {
+            background-color: #F00;
+            /* 强制继承父元素的border属性 */
+            border: inherit;
+        }
+
+        .div1 {
+            font-size: 50px;
+        }
+
+        .div2 {
+            /* 字面值-指定值 50% */
+            font-size: 50%;/* 计算值：50px * 50% = 25px */
+        }
+
+        .div3 {
+            font-size: inherit;/* 继承父元素的计算值 25px */
+        }
+    </style>
+</head>
+<body>
+<h2>Part 1</h2>
+<div class="top">
+    <p>I am p</p>
+</div>
+<h2>Part 2</h2>
+<div class="div1">I am div1
+    <div class="div2">I am div2
+        <div class="div3">I am div3</div>
+    </div>
+</div>
+</body>
+</html>
