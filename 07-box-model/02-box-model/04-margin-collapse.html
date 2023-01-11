@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-margin-collapse</title>
+    <style>
+        /*Part 1 - top bottom margin-collapse - brother */
+        
+        div.div1, div.div2 {
+            
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+        }
+        .div1 {
+            margin-bottom: 60px;
+        }
+
+        .div2 {
+            margin-top: 40px;
+        }
+
+        /*Part 2 - top bottom margin-collapse - Parent-child element */
+        
+        .div3 {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+            margin-top: 60px;
+        }
+        
+        .div4 {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            margin-top: 40px;
+        }
+        
+        /*Part 3 - top bottom margin-collapse - no content block element */
+
+        .div5 {
+            background-color: #ff0;
+            margin-top: 60px;
+            margin-bottom: 100px;
+        }
+
+        /*Part 4 - top bottom margin-collapse - p */
+        
+        .div6, p {
+            background-color: #ff0;
+        }
+    </style>
+</head>
+<body>
+<h2>Part 1 - top bottom margin-collapse - brother</h2>
+<div class="div1"></div>
+<div class="div2"></div>
+<h2>Part 2 - top bottom margin-collapse - Parent-child element</h2>
+<div class="div3">
+    <div class="div4"></div>
+</div>
+<h2>Part 3 - top bottom margin-collapse - no content block element </h2>
+666
+<div class="div5"></div>
+<div class="div5"></div>
+<div class="div5"></div>
+<div class="div5"></div>
+777
+<h2>Part 4 - top bottom margin-collapse - p </h2>
+<div class="div6"></div>
+<p>first one</p>
+</body>
+</html>

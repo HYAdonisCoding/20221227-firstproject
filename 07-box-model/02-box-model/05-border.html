@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-border</title>
+    <style>
+        /* Part 1 -  */
+        
+        div.div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+
+            /*border-top-width: 5px;*/
+            /*border-top-color: purple;*/
+            /*border-top-style: dotted;*/
+
+            /*border-right-width: 2px;*/
+            /*border-right-color: green;*/
+            /*border-right-style: dashed;*/
+
+            /*border-bottom-width: 5px;*/
+            /*border-bottom-color: blue;*/
+            /*border-bottom-style: solid;*/
+
+            /*border-left-width: 10px;*/
+            /*border-left-color: yellow;*/
+            /*border-left-style: double;*/
+
+            /*border-width: 5px 2px 5px 10px;*/
+            /*border-color: purple green blue yellow;*/
+            /*border-style: dotted dashed solid double;*/
+
+            /* 同时设置4个方向的边框 */
+            /*
+            border-left: 5px solid yellow;
+            border-right: 2px dashed green;
+            border-top: 5px dotted purple;
+            border-bottom: 5px blue solid;
+            */
+
+            border: 10px solid yellowgreen;
+            border-right: none;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            background-color: #ff0;
+        }
+        /* Part 2 -  */
+        div.div4 {
+            width: 0;
+            height: 0;
+            background-color: #f00;
+
+            border-left: 20px solid transparent;
+            border-bottom: 40px solid green;
+            /*border-right: 5px solid purple;*/
+            /*border-top: 20px solid yellow;*/
+        /*    正数：顺时针旋转，负数：逆时针宣传 */
+            transform: rotate(-45deg);
+        }
+
+        div.div3 {
+            width: 0;
+            height: 0;
+            background-color: #f00;
+            transform: rotate(45deg);
+
+            border-left: 20px solid yellow;
+            border-bottom: 40px solid blue;
+        }
+
+        div.div2 {
+            width: 0;
+            height: 0;
+
+            border-left: 80px solid yellow;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-top: 40px solid transparent;
+        }
+        /* Part 3 -  */
+        body {
+            background-color: #ddd;
+        }
+
+        div.div5 {
+            width: 100px;
+            height: 50px;
+            background-color: #fff;
+            border-bottom: 50px solid #000;
+            border-radius: 50%;
+        }
+        /* Part 4 -  */
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - border</h2>
+
+<input type="text">
+<div class="div1"></div>
+
+<h2>Part 2 - shape</h2>
+
+<div class="div4"></div>
+<div class="div3"></div>
+<div class="div2"></div>
+
+<h2>Part 3 - shape 2</h2>
+
+<div class="div5"></div>
+
+<h2>Part 4 - </h2>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-inline-block-element</title>
+    <style>
+        /* Part 1 -  */
+        /*
+        行内级非替换元素
+        1.不支持width、height、margin-top、margin-bottom
+        */
+        span.span1 {
+            background-color: #ff0;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 40px;
+        }
+        /*
+        行内级替换元素、inline-block元素、块级元素
+        1.支持width、height、margin-top、margin-bottom
+        */
+        img {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        div.div1 {
+            background-color: #0f0;
+            width: 100px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        /* Part 2 -  */
+
+        /*
+        行内级非替换元素
+        1.不支持width、height、margin-top、margin-bottom
+        2.pading-top、padding-bottom、border-top、border-bottom的效果比较特殊
+        */
+        span.span2 {
+            background-color: #ff0;
+            border: 10px solid greenyellow;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /*
+        行内级替换元素、inline-block元素、块级元素
+        1.支持width、height、margin-top、margin-bottom
+        2.支持pading-top、padding-bottom
+        */
+
+        div.div2 {
+            background-color: #0f0;
+            width: 100px;
+            border: 5px solid yellow;
+
+            /*padding-top: 40px;*/
+            /*padding-bottom: 40px;*/
+        }
+
+        /* Part 3 -  */
+
+        div.div3 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            border: 20px solid yellow;
+            /*border-bottom-left-radius: 40px;*/
+            /*border-radius: 10px 10px 0 0;*/
+            /*border-radius: 10px;*/
+
+            /* 只要border-radius大于50%，就完全变成一个圆 */
+            border-radius: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - inline-block-element attention</h2>
+
+<span class="span1">54345</span>
+<br>666
+<img src="../../images/beauty.jpg" alt="">
+
+<div class="div1">111</div>
+777
+
+<h2>Part 2 - inline-block-element attention2</h2>
+
+<span class="span2">54345</span> 888<br>
+666
+<div class="div2">1111</div>
+7777
+
+<h2>Part 3 - </h2>
+
+<div class="div3"></div>
+
+
+</body>
+</html>
