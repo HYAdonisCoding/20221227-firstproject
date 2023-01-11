@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-我的首页</title>
+    <base target="_blank">
+
+    <style>
+        div {
+            background-color: #FF00FF;
+            width: 500px;
+        }
+
+        form {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        button {
+            background-color: #4e6ef2;
+            border-radius: 10px;
+            width: 160px;
+            color: #FFF;
+        }
+
+        button#music {
+            width: 90px;
+        }
+
+        input, button, select {
+            height: 40px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            border: 1px solid #222;
+            border-radius: 20px;
+        }
+
+        select {
+            width: 60px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+<form action="https://www.baidu.com/s">
+    <input type="text" name="wd" placeholder="请输入关键字">
+    <button type="submit">百度一下</button>
+</form>
+
+<form action="https://www.google.com.hk/search">
+    <input type="text" name="q" placeholder="请输入关键字">
+    <button type="submit">谷歌一下</button>
+</form>
+
+<form action="https://zh.m.wikipedia.org/w/index.php">
+    <input type="text" name="search" placeholder="请输入关键字">
+    <button type="submit">维基百科</button>
+</form>
+
+<form action="https://github.com/search">
+    <input type="text" name="q" placeholder="请输入关键字">
+    <button type="submit">Github一下</button>
+</form>
+
+<form action="https://www.runoob.com/">
+    <input type="text" name="s" placeholder="请输入关键字">
+    <button type="submit">菜鸟教程</button>
+</form>
+
+<form action="https://search.bilibili.com/all">
+    <input type="text" name="keyword" placeholder="请输入关键字">
+    <button type="submit">B站搜索</button>
+</form>
+
+<form action="https://www.kugou.com/yy/html/search.html">
+    <input type="text" name="searchKeyWord" placeholder="请输入关键字">
+    <select name="searchType">
+        <option value="song">单曲</option>
+        <option value="special">歌单</option>
+        <option value="mv">MV</option>
+    </select>
+    <button type="submit" id="music">酷狗音乐</button>
+</form>
+
+<form action="https://v.qq.com/x/search/">
+    <input type="text" name="q" placeholder="请输入关键字">
+    <button type="submit">腾讯视频</button>
+</form>
+
+<!--
+1.accept-charset="GB2312"
+1> 客户端会使用GB2312的编码方式，先将请求URL（数据）进行编码，然后再发送请求给服务器
+2> 服务器也会使用GB2312的解码方式，解析客户端发送过来的请求数据
+3> 如果不填写accept-charset，默认跟随meta元素charset属性的值
+
+2.accept-charset的属性值最终由服务器（后台）决定
+ -->
+
+<form action="https://sou.autohome.com.cn/zonghe" accept-charset="GB2312">
+    <input type="text" name="q" placeholder="请输入关键字">
+    <input type="text" name="pvareaid" value="100834" hidden>
+    <input type="text" name="entry" value="42" hidden>
+<!--    &pvareaid=100834&entry=42-->
+    <button type="submit">汽车之家</button>
+</form>
+</div>
+</body>
+</html>

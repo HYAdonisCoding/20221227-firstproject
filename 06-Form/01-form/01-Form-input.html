@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-Form-input</title>
+    <style>
+        form div {
+            padding: 5px;
+        }
+
+        textarea {
+            /*禁止缩放*/
+            resize: none;
+            width: 100px;
+            height: 50px;
+        }
+
+        fieldset {
+            width: 400px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+input的value属性用途
+1.设置按钮的文字
+2.设置checkbox、radio被勾选时，发送给服务器的值
+3.设置文本输入框的默认值
+-->
+
+<!--
+假设服务器那边规定phone是手机，password是密码，code是验证码
+但是前端页面这边密码的name写成了pwd，那么后果是：服务器接收不到密码值
+-->
+
+<!--
+文件上传的必要条件
+1.method="post"
+2.enctype="multipart/form-data"
+3.input要有name值
+<form action="http://www.baidu.com" method="post" enctype="multipart/form-data">
+-->
+
+<form action="http://www.baidu.com" method="post">
+    <fieldset>
+        <legend>必填信息</legend>
+        <div>
+            <label for="phone">手机:</label>
+            <input id="phone" type="text"
+                   name="phone"  value=""
+                   maxlength="11" placeholder="请输入手机号">
+        </div>
+
+        <div>
+            <label for="pwd">密码:</label>
+            <input type="text" name="password" id="pwd" placeholder="请输入密码">
+        </div>
+
+        <div>
+            <label for="code">验证码:</label>
+            <input type="text" name="code" id="code" placeholder="请输入验证码">
+            <input type="button" value="获取验证码" tabindex="-1">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <kegend>选填信息</kegend>
+
+        <div>
+            <label for="photo">照片:</label>
+            <input type="file" name="photo" id="photo" tabindex="-1">
+        </div>
+
+        <div>
+            <!--
+            radio的name和value值都是由服务器决定的
+            同一种类型的radio，name值要保持一致，才能实现单选功能
+             -->
+            性别:
+            男<input type="radio" name="sex" value="0" checked tabindex="-1">
+            女<input type="radio" name="sex" value="1" tabindex="-1">
+        </div>
+
+        <div>
+            <!--
+            checkbox的name和value值都是由服务器决定的
+            同一种类型的checkbox，name值要保持一致
+             -->
+            兴趣:
+            篮球<input type="checkbox" name="hobby" value="0" tabindex="-1">
+            足球<input type="checkbox" name="hobby" value="1" tabindex="-1">
+            围棋<input type="checkbox" name="hobby" value="2" tabindex="-1">
+            游泳<input type="checkbox" name="hobby" value="3" tabindex="-1">
+        </div>
+
+        <div>
+            学历:
+            <select type="file" name="edu"  tabindex="-1">
+                <option value="1" selected>本科</option>
+                <option value="2">研究生</option>
+                <option value="3">博士</option>
+                <option value="4">博士后</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="intro">简介:</label>
+            <textarea name="intro" id="intro" placeholder="请输入简介"></textarea>
+        </div>
+    </fieldset>
+
+
+
+
+    <div>
+        <input type="reset" value="重置" tabindex="-1">
+        <input type="submit" value="注册" tabindex="-1">
+    </div>
+</form>
+
+</body>
+</html>

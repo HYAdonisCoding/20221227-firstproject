@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-display-practice</title>
+    <style>
+        .mail li {
+            list-style: none;
+        }
+
+        .mail li a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #000;
+            display: block;
+        }
+        
+        .mail li a:hover {
+            background-color: #0ff;
+        }
+
+        .mail ul {
+            padding: 0;
+            margin: 0;
+            display: none;
+            /*visibility: hidden;*/
+            border: 1px solid #999;
+            /*width: 100px;*/
+        }
+
+        .mail .title {
+            background-color: #999;
+            color: #fff;
+            display: block;
+        }
+
+        .mail .title:hover+ul {
+            display: block;
+        }
+
+        .mail {
+            width: 200px;
+            text-align: center;
+        }
+
+        span {
+            padding: 10px;
+        }
+
+        .mail:hover ul {
+            display: block;
+            /*visibility: visible;*/
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="mail">
+    <span class="title">mail</span>
+    <ul>
+        <li><a href="#">QQ mail</a></li>
+        <li><a href="#">126 mail</a></li>
+        <li><a href="#">139 mail</a></li>
+    </ul>
+
+    666
+</div>
+
+</body>
+</html>

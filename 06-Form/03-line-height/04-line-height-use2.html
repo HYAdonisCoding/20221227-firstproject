@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-line-height-use2</title>
+    <style>
+        div {
+            background-color: #ff0;
+            width: 400px;
+            height: 200px;
+
+            font-size: 20px;
+            /* 1.5 * 20px = 30px */
+            line-height: 50px;
+        }
+
+        span {
+            background-color: #f00;
+            font-size: 30px;
+            /* 1.5 * 30px = 45px */
+            line-height: inherit;
+        }
+
+        strong {
+            font-size: 40px;
+            background-color: #0f0;
+            /* 1.5 * 40px = 60px */
+            line-height: inherit;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>this is span</span>
+    <strong>this is strong</strong>
+</div>
+</body>
+</html>

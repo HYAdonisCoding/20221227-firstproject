@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-distance_of_elements</title>
+    <style>
+        span:nth-of-type(odd) {
+            background-color: #f00;
+        }
+
+        span:nth-of-type(even) {
+            background-color: #0f0;
+        }
+
+        div:nth-of-type(1) {
+            background-color: #f00;
+        }
+
+        div:nth-of-type(2) {
+            background-color: #0f0;
+        }
+
+        strong {
+            background-color: #ff0;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+        }
+
+        span, strong {
+            font-size: 14px;
+        }
+
+        div {
+            font-size: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Part 1</h2>
+
+<div>div1</div>
+<div>div2</div>
+
+<div>
+    <span>span01</span><span>span02</span><span>span03</span><span>span04</span><img src="../../images/beauty.jpg"><strong>strong</strong>
+</div>
+
+
+<h2>Part 2</h2>
+<h2>Part 3</h2>
+<div>
+    <span>span01</span>&lt;!&ndash;
+    &ndash;&gt;<span>span02</span>&lt;!&ndash;
+    &ndash;&gt;<span>span03</span>&lt;!&ndash;
+    &ndash;&gt;<span>span04</span>&lt;!&ndash;
+    &ndash;&gt;<img src="../../images/beauty.jpg">&lt;!&ndash;
+    &ndash;&gt;<strong>strong</strong>
+</div>
+
+
+<h2>Part 3</h2>
+<div>
+    <span>span01</span>
+    <span>span02</span>
+    <span>span03</span>
+    <span>span04</span>
+    <img src="../../images/beauty.jpg">
+    <strong>strong</strong>
+</div>
+
+</body>
+</html>
