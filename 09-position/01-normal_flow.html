@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-normal_flow</title>
+    <style>
+        /* Part 1 -  */
+        
+        .parent {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            padding-left: 40px;
+        }
+        
+        .child {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            margin-left: 20px;
+        }
+        /* Part 2 -  */
+        .div1, .div2, .div3, .div4, .div5 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .div1 {
+            background-color: #f00;
+            margin-bottom: -10px;
+        }
+
+        .div2 {
+            background-color: #0f0;
+        }
+
+        /* Part 3 -  */
+
+        .div3 {
+            background-color: #f00;
+            margin-bottom: -10px;
+        }
+
+        .div4 {
+            background-color: #0f0;
+            /* 让.div4可以进行相对定位
+            1.设置position: relative;
+            2.相对定位的参照对象：元素自己原来的位置
+            3.通过left、right、top、bottom对元素进行精确的定位
+            4.进行相对定位的元素还在标准流当中（原来占据的空间还在）
+            */
+            margin-top: 50px;
+            position: relative;
+
+            /*left: 50px;*/
+            /*top: 50px;*/
+
+            /*left: -30px;*/
+            /*top: -40px;*/
+
+            /*left: -10px;*/
+            /*top: -40px;*/
+
+            /*right: 10px;*/
+            /*bottom: 40px;*/
+
+            right: -10px;
+            bottom: -10px;
+        }
+
+        .div5 {
+            background-color: #ff0;
+        }
+        /* Part 4 -  */
+
+        p {
+            font-size: 50px;
+        }
+
+        sub, sup {
+            font-size: .5em;
+        }
+
+        sub {
+            position: relative;
+            bottom: 0.4em;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - normal_flow</h2>
+<!--
+normal flow：标准流、常规流、正常流、文档流（document flow）
+-->
+
+<div class="parent">
+    <div class="child"></div>
+    <span>span</span><strong>strong</strong>
+    <p>123</p>
+</div>
+<h2>Part 2 - normal_flow</h2>
+<div class="div1">div1</div>
+<span>span</span>
+<div class="div2">div2</div>
+<strong>strong</strong>
+
+<h2>Part 3 - relative</h2>
+<div class="div3">div03</div>
+<div class="div4">div04</div>
+<div class="div5">div05</div>
+<h2>Part 4 - relative练习</h2>
+
+<p>请计算一下n<sub>1</sub> + n<sub>2</sub> + n<sup>2</sup>的值？</p>
+
+</body>
+</html>

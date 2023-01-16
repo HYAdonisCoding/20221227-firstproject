@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-子绝父相</title>
+    <style>
+        /* Part 1 -  */
+        .car {
+            background-color: #ff0;
+            width: 50px;
+            height: 50px;
+        }
+
+        .number {
+            background-color: #f00;
+            position: absolute;
+            top: -5px;
+            right: 0;
+        }
+
+        .buy-car {
+            background-color: #0f0;
+            width: 70px;
+            height: 70px;
+            /* 让.buy-car元素成为定位元素 */
+            position: relative;
+            margin-top: 80px;
+        }
+
+        /* Part 2 -  元素的层叠*/
+        .box {
+            width: 100px;
+            height: 300px;
+            background-color: #f00;
+        }
+
+        .child1 {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            margin-bottom: -20px;
+        }
+
+        .child2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0ff;
+            margin-left: 20px;
+        }
+
+
+        /* Part 3 -  */
+
+        /* Part 4 -  */
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - 子绝父相</h2>
+<div class="buy-car">
+    <div class="car">车子</div>
+    <div class="number">数字</div>
+</div>
+
+<h2>Part 2 - 元素的层叠</h2>
+
+<div class="box">
+    <div class="child1"></div>
+    <div class="child2"></div>
+</div>
+<h2>Part 3 - </h2>
+
+<h2>Part 4 - </h2>
+
+
+</body>
+</html>
