@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-float-clear_06</title>
+    <style>
+        /* Part 1 -  */
+
+        .container {
+            width: 300px;
+            border: 1px solid #000;
+        }
+
+        .box1, .box2 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: #ff0;
+            float: left;
+        }
+        .box2 {
+            background-color: #f00;
+            float: right;
+        }
+
+        .footer {
+            /*height: 0;*/
+            /*background-color: #ff0;*/
+            clear: both;
+        }
+        /* Part 2 -  */
+
+        /* Part 3 -  */
+
+        /* Part 4 -  */
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - </h2>
+<!-- 在父元素最后增加一个空的块级子元素，并且让它设置clear: both -->
+<div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="footer"></div>
+</div>
+<strong>1234321</strong>
+<h2>Part 2 - </h2>
+
+<h2>Part 3 - </h2>
+
+<h2>Part 4 - </h2>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-float-clear_07</title>
+    <style>
+        /* Part 1 -  */
+
+        .container {
+            width: 300px;
+            overflow: auto;
+            border: 1px solid #000;
+        }
+
+        .box1, .box2 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: #ff0;
+            float: left;
+        }
+        .box2 {
+            background-color: #f00;
+            float: right;
+        }
+        /* Part 2 -  */
+
+        /* Part 3 -  */
+
+        /* Part 4 -  */
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - </h2>
+<!-- 在父元素最后增加一个br标签：<br clear="all"> -->
+<div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <!-- br的clear属性等价于CSS中的clear
+     取值范围：left\right\all
+     -->
+    <br clear="all">
+</div>
+<strong>1234321</strong>
+<h2>Part 2 - </h2>
+
+<h2>Part 3 - </h2>
+
+<h2>Part 4 - </h2>
+
+
+</body>
+</html>

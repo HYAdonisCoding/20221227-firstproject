@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-property</title>
+    <style>
+        /* Part 1 -  */
+
+        div {
+            text-align: right;
+            /*background: no-repeat #000;*/
+            font: 20px Courier;
+            text-decoration: underline line-through overline;
+            font-family: "微软雅黑", Arial, Colsolas, Courier;
+        }
+
+        div::before {
+            content: "[" attr(href) "]" "13432";
+            margin: 10px 20px 30px 40px;
+            transition: all 1s;
+        }
+        /* Part 2 -  */
+
+        /* Part 3 -  */
+
+        /* Part 4 -  */
+
+    </style>
+</head>
+<body>
+<h2>Part 1 - </h2>
+<div>12345678</div>
+font-family
+字体名称#
+
+font-family: 字体名称,字体名称,字体名称
+
+style
+d1 d2
+
+content
+<string>+
+
+    font-family
+    字体名称 [, 字体名称]*
+
+    style
+    d1 || d2*
+
+    my
+    a  b  |  c  ||  d  &&  e  f
+
+
+    text-decoration
+    none | [ underline || overline || line-through || blink ] | inherit
+
+    none | ABC | inherit
+    ABC = [ underline || overline || line-through || blink ]
+
+    font
+    'font-size' 'font-family'
+
+    style
+    d1 && d2 && d3 && d4
+
+    background
+    'background-color' || 'background-image' || 'background-repeat' || 'background-attachment' || 'background-position'
+
+    text-align
+    left | right | center | justify | inherit
+<h2>Part 2 - </h2>
+
+<h2>Part 3 - </h2>
+
+<h2>Part 4 - </h2>
+
+
+</body>
+</html>

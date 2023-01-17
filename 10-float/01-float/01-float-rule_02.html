@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-float-rule_02</title>
+    <style>
+        /* Part 1 -  */
+
+        .container {
+            width: 400px;
+            /*height: 700px;*/
+            border: 1px solid #000;
+        }
+
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            float: left;
+            /*float: right;*/
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+            float: left;
+            /*float: right;*/
+        }
+
+        .div3 {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f;
+            /*float: left;*/
+            float: right;
+        }
+
+        /* Part 2 -  other*/
+
+        .parent {
+            width: 900px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+
+        .child {
+            width: 300px;
+
+        }
+
+        .first {
+            height: 100px;
+            background: red;
+            float: left;
+        }
+
+        .second {
+            height: 70px;
+            background: yellow;
+            float: right;
+        }
+
+        .third {
+            height: 85px;
+            background: mediumorchid;
+            float: left;
+        }
+
+        .forth {
+            height: 100px;
+            background: lightgreen;
+            float: right;
+        }
+
+        .fifth {
+            height: 90px;
+            background: skyblue;
+            float: left;
+        }
+
+        /* Part 3 -  */
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            float: left;
+        }
+
+        .box2 {
+            width: 320px;
+            height: 150px;
+            background-color: #ff0;
+            float: right;
+        }
+
+        .box3 {
+            width: 50px;
+            height: 300px;
+            background-color: #f0f;
+            float: right;
+        }
+        /* Part 4 -  */
+
+        div span {
+            background-color: #f00;
+            float: left;
+        }
+
+        /* Part 4 -  */
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            background-color: #f00;
+            height: 30px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        li {
+            background-color: #ff0;
+            float: left;
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="css/clear-fix.css">
+</head>
+<body>
+<h2>Part 1 - rule_02</h2>
+
+
+<!--
+浮动元素之间不能层叠
+-->
+
+<div class="container clear-fix">
+    <div class="div1">box1</div>
+    <div class="div2">box2</div>
+    <div class="div3">box3</div>
+</div>
+<h2>Part 2 - other</h2>
+<!--
+浮动元素之间不能层叠
+如果一个元素浮动，另一个浮动元素已经在那个位置了，后浮动的元素将紧贴着前一个浮动元素
+如果水平方向剩余的空间不够显示浮动元素，浮动元素将向下移动，直到有充足的空间为止
+-->
+<div class="parent clear-fix">
+    <div class="child first">001-left</div>
+    <div class="child second">002-left</div>
+    <div class="child third">003-left</div>
+    <div class="child forth">004-left</div>
+    <div class="child fifth">005-left</div>
+</div>
+
+<h2>Part 3 - rule3</h2>
+<!--
+浮动元素的顶端不能超过包含块的顶端，也不能超过之前所有浮动元素的顶端
+-->
+<div class="container clear-fix">
+    <div class="box1">box01</div>
+    <div class="box2">box02</div>
+    <div class="box3">box03</div>
+</div>
+
+<h2>Part 4 - float的应用1</h2>
+
+<div class="container clear-fix">
+<span>span01</span>
+<span>span02</span>
+<span>span03</span>
+<span>span04</span>
+<span>span05</span>
+</div>
+
+<h2>Part 5 - float的应用2</h2>
+<div class="container clear-fix">
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+    </ul>
+</div>
+
+</body>
+</html>
