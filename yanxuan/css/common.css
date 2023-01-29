@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/* 清浮动 */
+.clear-fix::after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+.clear-fix {
+    *zoom: 1;
+}
+
+/* 每一行主要内容 */
+.row {
+    position: relative;
+
+    width: 1090px;
+    margin: 0 auto;
+}
+
+/* 每一行主要内容的头部信息 */
+.header {
+    margin-bottom: 20px;
+}
+
+.header .title {
+    float: left;
+    margin-right: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.header .subtitle {
+    float: left;
+    margin-top: 13px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.header .more {
+    float: right;
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 30px;
+    padding-top: 14px;
+}
+
+/* 图片缩放功能 */
+.img-scale img {
+    transition: transform 1s;
+}
+
+.img-scale:hover img {
+    transform: scale(1.05);
+}
+
+/* 默认的a */
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #b4a078;
+}
+
+/* 区分左边/右边内容 */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* 使用了component图片的类 */
+.cmp,
+.site-nav .download-app::before,
+.site-nav .service::after {
+    background: url("../images/component.png") no-repeat;
+}
+
+/* 上一页 下一页 按钮*/
+.arrow-btn {
+    position: absolute;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: url("../images/icon-normal.png") #d0c4af no-repeat;
+    cursor: pointer;
+}
+
+.arrow-btn:hover {
+    background-color: #b19d79;
+}
+
+.arrow-btn.pre {
+    background-position: 0 -4700px;
+}
+
+.arrow-btn.next {
+    background-position: 0 -4880px;
+}
+
+/* 只显示一行文字(多出部分用省略号显示) */
+.one-line {
+    /* 保证永远只显示一行文字(单词可以超出元素范围) */
+    white-space: nowrap;
+    /* 超出元素的内容隐藏掉 */
+    text-overflow: ellipsis;
+    /* 隐藏掉的内容在尾部用省略号来显示 */
+    overflow: hidden;
+}
+
+/* 产品*/
+.product {
+    float: left;
+}
+
+.product .image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.product .image  .tag{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 5px;
+    border: 1px solid #b3a07d;
+    font-size: 12px;
+    line-height: 20px;
+    color: #a7936e;
+    background-color: #f4f0ea;
+}
+
+.product .info {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.product .attrs {
+    height: 20px;
+    margin-bottom: 3px;
+    margin-top: 6px;
+    line-height: 20px;
+}
+
+.product .attr {
+    display: inline-block;
+    height: 20px;
+    margin: 0 3px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #e36844;
+}
+
+.product .attr.hot {
+    background-color: #f28f2d;
+}
+
+.product .attr.special {
+    color: #a94528;
+    background-color: #f8bc59;
+}
+
+.product .name {
+    height: 20px;
+    padding: 0 10px;
+    margin-top: 4px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.product .price {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.product .price-value {
+    color: #d4282d;
+}
+
+.product .brand-name {
+    border-left: 1px solid #999;
+    padding-left: 10px;
+    margin-left: 17px;
+    color: #999;
+}
+
+.product .image .cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+
+}
+
+.product .image:hover .cover{
+    display: block;
+}

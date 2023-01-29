@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, p,
+form, button, input, textarea, select,
+table, tr, td, th {
+    /* 去除边距 */
+    margin: 0;
+    padding: 0;
+}
+
+i, em {
+    /* 默认不斜体 */
+    font-style: normal;
+}
+
+li {
+    /* 去除圆点 */
+    list-style: none;
+}
+
+a {
+    /* 去除下划线 */
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, strong, p {
+    /* 默认不加粗 */
+    font-weight: normal;
+}
+
+table {
+    /* 合并边框 */
+    border-collapse: collapse;
+    /* 单元格间距 */
+    border-spacing: 0;
+}
+
+button, input, textarea, select, a {
+    /* 去除轮廓 */
+    outline: none;
+}
+
+img {
+    /* 去除默认边框 */
+    border: none;
+    /* 设置顶部对齐(去除图片的一些间隙) */
+    vertical-align: top;
+}
