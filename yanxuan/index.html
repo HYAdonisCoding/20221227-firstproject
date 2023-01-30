@@ -694,17 +694,142 @@
     </div>
 </div>
 <!-- 大家都在说 -->
+<div class="comment">
+    <div class="row">
+        <div class="header clear-fix">
+            <div class="left">
+                <h2 class="title">
+                    <h2 class="title">大家都在说</h2>
+                    <span class="subtitle">生活没有统一标准</span>
+                </h2>
+            </div>
+        </div>
+        <div class="content clear-fix">
+            <div class="item">
+                <a href="#" class="image"><img src="images/comments_01.jpg" alt=""></a>
+                <div class="info">
+                    <p class="user-name">张*** 2022-11-26 00:07</p>
+                    <div class="middle clear-fix">
+                        <strong class="title">【囤货装】薄至2.5mm</strong>
+                        <span class="priced">￥389</span>
+                    </div>
+
+                    <div class="bottom">
+                        <p class="detail">
+                            好用 很能吸，一片能用4小时
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <a href="#" class="image"><img src="images/comments_02.jpg" alt=""></a>
+                <div class="info">
+                    <p class="user-name">张*** 2022-11-26 00:07</p>
+                    <div class="middle clear-fix">
+                        <strong class="title">【囤货装】薄至2.5mm</strong>
+                        <span class="priced">￥389</span>
+                    </div>
+
+                    <div class="bottom">
+                        <p class="detail">
+                            好用 很能吸，一片能用4小时
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <a href="#" class="image"><img src="images/comments_03.jpg" alt=""></a>
+                <div class="info">
+                    <p class="user-name">张*** 2022-11-26 00:07</p>
+                    <div class="middle clear-fix">
+                        <strong class="title">【囤货装】薄至2.5mm</strong>
+                        <span class="priced">￥389</span>
+                    </div>
+
+                    <div class="bottom">
+                        <p class="detail">
+                        好用 很能吸，一片能用4小时
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="arrow-btn pre"></button>
+        <button class="arrow-btn next"></button>
+    </div>
+
+</div>
 
 </div>
 
 <!-- 网站尾部内容 -->
 <div id="footer">
 
-    <div class="footer1">
-        <div class="row"></div>
+    <div class="footer1 clear-fix">
+        <div class="row">
+            <div class="col service">
+                <h4>客户服务</h4>
+                <a href="#" class="online">在线客服</a>
+                <a href="#" class="online">用户反馈</a>
+            </div>
+            <div class="col what">
+                <h4>何为网易严选</h4>
+                <p href="#" class="desc">网易严选是深受新中产喜爱的生活方式品牌, 为消费者提供一站式、全品类、全方位的美好生活解决方案。我们通过简约、实用、舒适的美学设计, 不断带来高品质灵感好物, 陪伴3000万新中产用户「活出自己喜欢的样子」, 共同倡导多元化的生活价值主张——每个人都可以把生活的选择权交还给自己。</p>
+            </div>
+            <div class="col">
+                <h4>扫码下载严选APP</h4>
+                <a href="#">在线客服</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <div class="row">
+            <div class="top">
+                <div class="col"><span>网易自营商店</span></div>
+                <div class="col"><span>30天无忧退货</span></div>
+                <div class="col"><span>满88元免邮费</span></div>
+                <div class="col"><span>网易品质保证</span></div>
+            </div>
+            <div class="divider"></div>
+            <div class="site-info clear-fix">
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">售后服务</a></li>
+                    <li><a href="#">配送与验收</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">企业采购</a></li>
+                    <li><a href="#">开放平台</a></li>
+                    <li><a href="#" class="last">搜索推荐</a></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </div>
 
 
 </body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    // 去除空格的js函数, 传入选择器作为参数即可
+    function removeSpace() {
+        for (let i in arguments) {
+            $(arguments[i]).contents().filter(function () {
+                return this.nodeType === 3;
+            }).remove();
+        }
+    }
+
+    $(function () {
+        removeSpace('.slider .page-list',
+                    '.product .attrs',
+                    '.product .price',
+                    '.limit .time .time-detail')
+    })
+</script>
 </html>

@@ -647,15 +647,232 @@ body {
 /* region -- */
 /* endregion */
 
-/* region -- */
+/* region -评论模块- */
+
+.comment {
+    padding: 60px 0;
+    background-color: #f4f0ea;
+}
+
+.comment .content {
+    margin-right: -12px;
+}
+
+.comment .item {
+    position: relative;
+    float: left;
+    width: 355px;
+    height: 492px;
+    margin-right: 12px;
+    background-color: #fff;
+}
+
+.comment .image {
+    width: 355px;
+    height: 355px;
+    display: block;
+    overflow: hidden;
+}
+
+.comment .image img {
+    width: 353px;
+    height: 353px;
+    border: 1px solid transparent;
+}
+
+.comment .arrow-btn.pre {
+    left: -70px;
+}
+
+.comment .arrow-btn.next {
+    right: -70px;
+}
+
+.comment .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #fff;
+    width: 305px;
+    height: 130px;
+}
+
+.comment .info .user-name {
+    color: #999;
+    font-weight: 400;
+    /*float: left;*/
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.comment .info .middle {
+    color: #999;
+    margin-bottom: 16px;
+    line-height: 1;
+    text-align: center;
+    font-size: 13px;
+}
+
+.comment .info .title {
+    max-width: 190px;
+    font-size: 16px;
+    height: 16px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    color: #333;
+    line-height: 14px;
+    font-weight: 700;
+
+}
+
+.comment .info .priced {
+    margin-bottom: 0;
+    margin-right: 15px;
+    color: #b4a078;
+    float: right;
+}
+
+.comment .info .bottom {
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    line-height: 16px;
+    min-height: 80px;
+    max-height: 80px;
+    transition: max-height .4s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.comment .info .detail {
+    display: block;
+}
 /* endregion */
 
 /* region - 尾部 - */
 
 .footer1 {
-    height: 100px;
+    height: 180px;
     padding-top: 60px;
     padding-bottom: 34px;
+    margin-right: -12px;
     border-top: 1px solid #e8e8e8;
 }
+
+.footer1 .col {
+    float: left;
+    height: 180px;
+    width: 355px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer1 .col h4 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 28px;
+    line-height: 1;
+}
+
+.footer1 .service a {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    padding-top: 50px;
+    border: 1px solid #000;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer1 .col .desc {
+    text-align: left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.footer1 .divider {
+    float: left;
+    width: 1px;
+    height: 160px;
+    margin-top: 20px;
+    background-color: #61594b;
+}
+.footer1 .service .online {
+    background: url("../images/service.png") no-repeat center 20px;
+}
+
+.footer1 .service .online:hover {
+    background: url("../images/service2.png") no-repeat center 20px;
+}
+
+.footer1 .what {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.footer2 {
+    height: 100px;
+    padding-top: 37px;
+    padding-bottom: 30px;
+    background-color: #414141;
+}
+.footer2 .top {
+    margin-right: -10px;
+}
+.footer2 .top .col {
+    margin-bottom: 30px;
+    padding-left: 17px;
+    float: left;
+    color: #fff;
+    width: 258px;
+    font-size: 18px;
+    line-height: 51px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer2 .divider {
+    width: 100%;
+    height: 1px;
+}
+
+.footer2 .site-info {
+    text-align: center;
+    color: #999;
+    position: relative;
+    margin-bottom: 20px;
+}
+.footer2 .site-info ul {
+    display: block;
+    text-align: center;
+    position: relative;
+}
+.footer2 .site-info a {
+    float: left;
+    color: #999;
+    text-align: center;
+    width: auto;
+    font: 12px/1.5 "Microsoft Yahei","微软雅黑",verdana;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+.footer2 .site-info a::after {
+    content: "|";
+    margin: auto 40px;
+}
+
+.footer2 .site-info a.last::after {
+    display: none;
+}
+
+
+
 /* endregion */
