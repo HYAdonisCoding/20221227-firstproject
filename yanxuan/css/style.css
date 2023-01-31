@@ -780,6 +780,7 @@ body {
     cursor: pointer;
     box-sizing: border-box;
 }
+
 #left-side-bar .item .side-icon {
     position: absolute;
     top: 2px;
@@ -842,7 +843,6 @@ body {
     z-index: 1;
 }
 
-
 #left-side-bar .first-item:before {
     left: 15px;
 }
@@ -852,6 +852,125 @@ body {
 /* endregion */
 
 /* region - 右侧排行榜 - */
+#right-side-bar {
+    position: fixed;
+    top: 62px;
+    right: 0;
+    width: 72px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#right-side-bar img {
+    width: 100%;
+}
+
+
+#right-side-bar li {
+    height: 72px;
+    /*border-bottom: 1px solid #ddd;*/
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+#right-side-bar .first::after,
+#right-side-bar .tool-server::before,
+#right-side-bar .tool-go-top::before {
+
+    content: '';
+    border-bottom: 1px solid #eaeaea;
+    position: absolute;
+    height: 1px;
+    width: 60px;
+    left: 6px;
+}
+
+#right-side-bar .first::after {
+    display: block;
+    left: 6px;
+    bottom: 0;
+    width: 60px;
+}
+
+#right-side-bar li:nth-last-child(1) {
+    border-bottom: none;
+}
+
+#right-side-bar .first {
+    height: 140px;
+    text-align: center;
+    line-height: 17px;
+}
+
+#right-side-bar .download-text1 {
+
+    color: #666;
+}
+
+#right-side-bar .download-text2,
+#right-side-bar .download-text3 {
+    color: #BC3B3B;
+}
+
+.tool-subscribe .tool-icon,
+.tool-server .tool-icon,
+.tool-go-top .tool-icon {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tool-subscribe p,
+.tool-server p,
+.tool-go-top p {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tool-subscribe:hover p,
+.tool-server:hover p,
+.tool-go-top:hover p {
+    color: #b4a078;
+    text-align: center;
+    display: inline-block;
+}
+.tool-subscribe .tool-icon {
+    background-position: 0 -420px;
+    width: 30px;
+    height: 30px;
+    right: auto;
+
+}
+.tool-subscribe:hover .tool-icon {
+    background-position: 0 -385px;
+}
+
+.tool-server .tool-icon {
+    background-position: 0 -86px;
+    height: 31px;
+    width: 32px;
+}
+
+.tool-server:hover .tool-icon {
+    background-position: 0 -45px;
+}
+
+.tool-go-top .tool-icon {
+
+    background-position: 0 -230px;
+    height: 15px;
+    width: 26px;
+}
+
+.tool-go-top:hover .tool-icon {
+    background-position: 0 -208px;
+}
 
 
 /* endregion */

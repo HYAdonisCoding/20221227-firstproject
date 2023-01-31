@@ -83,6 +83,10 @@ a:hover {
     background: url("../images/component.png") no-repeat;
 }
 
+.tool-icon {
+    background: url("../images/toolbar-icon.png") no-repeat;
+}
+
 /* 上一页 下一页 按钮*/
 .arrow-btn {
     position: absolute;
