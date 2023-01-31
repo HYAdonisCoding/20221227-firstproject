@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vertical-align6</title>
+    <style>
+        /* Part 1 -  */
+
+        body {
+            font-family: "宋体";
+        }
+
+
+        strong {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            margin-bottom: 20px;
+            vertical-align: 100%;
+        }
+
+        div {
+            margin: 100px auto;
+            border: 1px solid #000;
+            width: 400px;
+            font-size: 0;
+            line-height: 50px;
+            background-color: #0ff;
+        }
+        div {
+            animation-duration: 5s;
+            animation-name: my-anim2;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes my-anim1 {
+            from {
+                width: 390px;
+                height: 110px;
+                border-radius: 10px;
+            }
+
+            to {
+                width: 400px;
+                height: 100px;
+                border-radius: 5px;
+            }
+        }
+
+        @keyframes my-anim2 {
+            0% {
+                width: 400px;
+                height: 100px;
+                border-radius: 5px;
+            }
+
+            20% {
+                width: 410px;
+                height: 110px;
+                border-radius: 10px;
+            }
+
+            40% {
+                width: 420px;
+                height: 115px;
+                border-radius: 15px;
+            }
+
+            60% {
+                width: 430px;
+                height: 120px;
+                border-radius: 20px;
+            }
+
+            60% {
+                width: 440px;
+                height: 125px;
+                border-radius: 25px;
+            }
+
+            100% {
+                width: 450px;
+                height: 130px;
+                border-radius: 30px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<!--
+text-align: 设置行内级盒子水平方向的布局
+vertical-align: 设置行内级盒子垂直方向的布局
+-->
+<h2>Part 1 - </h2>
+<div>
+    Engxxxx
+    <span>12345678</span>
+</div>
+
+<!--
+1.每一个HTML元素都会产生一个盒子(box, 元素所需要的空间)
+1> 块级元素(比如div)产生一个块级盒子(block-level box)
+2> 行内级元素(比如span)产生一个行内级盒子(inline-level box)
+3> inline-block元素产生一个行内级盒子(inline-level box)
+
+2.多个行内级盒子可以在同一行显示
+
+3.vertical-align用来设置行内级盒子(inline-level box)垂直位置
+
+4.行内级盒子(inline-level box)高度
+1> 行内级非替换元素(比如span\strong\a): line-height的高度
+2> inline-block元素: margin-box的高度
+3> 行内级替换元素(比如img\input):  margin-box的高度
+-->
+<h2>Part 2 - </h2>
+
+<h2>Part 3 - </h2>
+
+<h2>Part 4 - </h2>
+
+
+</body>
+</html>
