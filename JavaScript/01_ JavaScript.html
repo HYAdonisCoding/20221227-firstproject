@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 80px;
+            height: 80px; 
+        }
+
+        .container {
+            background-color: #ff0;
+            width: 200px;
+            height: 400px;
+        }
+
+        .child1 {
+            background-color: #0f0;
+        }
+
+        .child2 {
+            background-color: #00f;
+        }
+
+        .child3 {
+            background-color: #f0f;
+        }
+
+        .child4 {
+            background-color: #0ff;
+        }
+    </style>
+    
+</head>
+<body>
+<div class="container">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+    <div class="child4">child4</div>
+</div>
+<button onclick="func()">点我</button>
+<button onclick="a()">点我2</button>
+<button onclick="b()">在parent尾部添加dom节点</button>
+<button onclick="c()">在node节点前添加dom节点</button>
+<button onclick="e()">改变node节点样式</button>
+<button onclick="d()">删除node节点</button>
+
+<div id="parent">
+	<div id="node">
+		<p>Java1010</p>
+	</div>
+</div>
+<strong id="today" class="today">today</strong>
+
+<button onclick="delayAlert()">3秒后弹框</button>
+</body>
+<script src="js/js_01.js"></script>
+</html>
