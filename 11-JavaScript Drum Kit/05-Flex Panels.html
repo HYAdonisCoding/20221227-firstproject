@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'> -->
     <title>05-Flex Panels</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
     }
 
     .panels {
-        min-width: 100vh;
+        min-height: 100vh;
         overflow: hidden;
         display: flex;
     }
@@ -62,7 +63,7 @@
         margin: 0;
         width: 100%;
         transition: transform 0.5s;
-        float: 1 0 auto;
+        flex: 1 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -96,7 +97,7 @@
     }
 </style>
 <div class="panels">
-    <div class="panel panel1">
+    <div class="panel panell">
         <p>Hey</p>
         <p>Let's</p>
         <p>Dance</p>
