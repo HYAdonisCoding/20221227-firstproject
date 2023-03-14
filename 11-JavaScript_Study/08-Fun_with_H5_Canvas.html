@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<canvas id="draw" width="800" height="800"></canvas>
+<canvas id="draw" width="390" height="844   "></canvas>
     
 <script>
 const canvas = document.querySelector('#draw');
@@ -29,7 +29,7 @@ let direction = true;
 
 function draw(e) {
     if (!isDrawing) return;
-    console.log(e);
+    // console.log(e);
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);
@@ -52,26 +52,74 @@ function draw(e) {
     }
 }
 
-canvas.addEventListener('mousedown', (e) => {
-    isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-});
+function drawPhone(e) {
+    if (!isDrawing) return;
+    // console.log(drawPhone, e);
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';  
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.touches[0].clientX,e.touches[0].clientY);
+    ctx.stroke();
+    [lastX, lastY] = [e.touches[0].clientX, e.touches[0].clientY];
 
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+    hue++;
+    if (hue >= 360) {
+        hue = 0;
+    }
+    if (ctx.lineWidth >= 50 || ctx.lineWidth <= 1) {
+        direction = !direction;
+    }
 
+    if (direction) {
+        ctx.lineWidth++;
+    } else {
+        ctx.lineWidth--;
+    }
+}
+
+if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    console.log('iOS');
+    // window.location.href ="iPhone.html";
+    phone()
+} else if (/(Android)/i.test(navigator.userAgent)) {
+    console.log('Android');
+    // window.location.href ="Android.html";
+    phone()
+} else {
+    // window.location.href ="pc.html";
+    console.log('pc');
+    canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+    });
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mouseout', () => isDrawing = false);
+};
+
+
+function phone() {
+    canvas.height = window.innerHeight - 88;
+    // 兼容手机
+    canvas.addEventListener('touchstart', (e) => {
+        console.log('touchstart event', e, ctx);  
+        isDrawing = true;
+        [lastX, lastY] = [e.touches[0].clientX, e.touches[0].clientY];
+    });
+
+    canvas.addEventListener('touchmove', drawPhone);
+    canvas.addEventListener('touchend', () => isDrawing = false);
+    canvas.addEventListener('touchcancel', () => isDrawing = false);
+
+}
 </script>
 
 <style>
     html, body {
         margin: 0;
         padding: 0;
-        background: #fc6;
-    }
-
-    canvas {
-        background: #fff;
     }
 </style>
 </body>
