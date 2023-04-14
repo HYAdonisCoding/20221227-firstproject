@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录页面</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+		
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		
+		form {
+			background-color: #fff;
+			border-radius: 5px;
+			padding: 20px;
+			width: 300px;
+			margin: 0 auto;
+			box-shadow: 0px 0px 10px #ccc;
+		}
+		
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+		
+		button:hover {
+			background-color: #45a049;
+		}
+		
+		a {
+			color: dodgerblue;
+		}
+		
+	</style>
+</head>
+<body>
+
+<h1>欢迎登录</h1>
+
+<form>
+  <label for="username">用户名</label>
+  <input type="text" id="username" name="username" placeholder="请输入用户名">
+
+  <label for="password">密码</label>
+  <input type="password" id="password" name="password" placeholder="请输入密码">
+
+  <button type="submit">登录</button>
+  
+  <div style="text-align:center">
+    <a href="#">忘记密码？</a> |
+    <a href="#">注册新用户</a>
+  </div>
+  
+</form>
+
+</body>
+</html>
