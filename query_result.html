@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查询页面</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+		
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		
+		form {
+			background-color: #fff;
+			border-radius: 5px;
+			padding: 20px;
+			width: 300px;
+			margin: 0 auto;
+			box-shadow: 0px 0px 10px #ccc;
+		}
+		
+		input[type=text], input[type=password], input[type=date], input[type=number], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+		
+		button:hover {
+			background-color: #45a049;
+		}
+		
+		a {
+			color: dodgerblue;
+		}
+		
+	</style>
+</head>
+<body>
+
+<h1>欢迎查询数据</h1>
+
+<form>
+  <label for="latitude">经度</label>
+  <input type="text" id="latitude" name="latitude" placeholder="请输入经度">
+
+  <label for="longitude">纬度</label>
+  <input type="text" id="longitude" name="longitude" placeholder="请输入纬度">
+  
+  <label for="date">开始日期</label>
+  <input type="date" id="date" name="date" placeholder="请输入开始日期" min="2022-04-01" max="2023-05-01" tabindex="-1">
+
+  <label for="days">查询天数</label>
+  <input type="number" id="days" name="days" placeholder="请输入查询天数" max="31" min="1">
+
+  <label for="area">查询地区</label>
+  <select type="file" name="area"  id="areaSelect" tabindex="-1">
+	<option value="1" selected>北京</option>
+	<option value="2">河北</option>
+  </select>
+
+  <button id="submit-btn" type="submit" onclick="checkInput">查询</button>
+  
+  <div style="text-align:center">
+    <!-- <a href="#">忘记密码？</a> |
+    <a href="#">注册新用户</a> -->
+  </div>
+  
+</form>
+<script src="yanxuan/js/jquery-3.2.1.min.js"></script>
+<script>
+	const inputs = document.querySelectorAll('input');
+	var selectBox = document.getElementById("areaSelect");
+
+	const data = {};
+
+	const submitBtn = document.querySelector('#submit-btn');
+
+	submitBtn.addEventListener('click', function(event) {
+		event.preventDefault(); // 阻止表单默认提交事件
+		checkInput();
+	});
+	function checkInput() {
+		inputs.forEach(input => {
+			data[input.name] = input.value;
+		});
+		data[selectBox.name] = selectBox.value;
+		// console.log(data);
+		msg = `您将要查询的数据信息为\n经度:${data["latitude"]}\n纬度:${data["longitude"]}\n开始日期:${data["date"]}\n查询天数:${data["days"]}\n查询地区:${data["area"]==1?"北京":"河北"}。\n是否执行此查询操作？`;
+
+		
+		if(confirm(msg)){
+			// 用户点击了确认，执行相应的操作
+			console.log('用户点击了确认');
+			requestData(data);
+		} else {
+			// 用户点击了取消，不执行任何操作
+			console.log('用户点击了取消');
+			requestData1(data);
+		}
+	}
+	// 网络请求
+	function requestData(params) {
+		// let xhr = new XMLHttpRequest();
+
+		// let url = 'http://localhost:8011/traffic/getResult';
+		// xhr.open('POST', url);
+		// xhr.setRequestHeader('Content-Type', 'application/json');
+		// xhr.send(JSON.stringify(params));
+		// console.table(JSON.stringify(params));
+		// xhr.onload = function() {
+		// 	if (xhr.status === 200) {
+		// 		console.log(xhr.responseText);
+		// 	} else {
+		// 		console.error('Request failed.  Returned status of ' + xhr.status);
+		// 	}
+		// };
+		console.log(JSON.stringify(params));
+		$.ajax({
+			url: 'http://localhost:8011/traffic/getResult',
+			type: 'POST',
+			dataType: 'json',
+			contentType: 'application/json;charset=UTF-8',
+			data: JSON.stringify(params),
+			success: function (data) {
+				console.log(data);
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				console.log(textStatus, errorThrown);
+			}
+		});
+		// fetch('http://localhost:8011/traffic/getResult', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify(params),
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	}
+		// 	}).then(response => response.json())
+		// 	.then(data => {
+		// 		try {
+		// 			const result = JSON.parse(data);
+		// 			// 对返回的数据进行处理
+		// 			console.log(result);
+		// 		} catch (e) {
+		// 			console.error('返回的 JSON 数据格式有问题：', e);
+		// 		}
+		// 	})
+		// 	.catch(error => {
+		// 		console.error(error);
+		// 	});
+	}
+	
+	// 网络请求
+	function requestData1(params) {
+		console.log(JSON.stringify(params));
+		$.ajax({
+			url: 'http://localhost:8011/traffic/getResultData',
+			type: 'POST',
+			dataType: 'json',
+			contentType: 'application/json;charset=UTF-8',
+			data: JSON.stringify(params),
+			success: function (data) {
+				console.log(data);
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				console.log(textStatus, errorThrown);
+			}
+		});
+	}
+</script>
+</body>
+</html>
