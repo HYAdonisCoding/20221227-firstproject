@@ -50,7 +50,83 @@
 		a {
 			color: dodgerblue;
 		}
+		/* 浮窗样式 */
+		.loading-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.6);
+			z-index: 99999;
+		}
+
+		.loading-box {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			max-height: 300px;
+			overflow-y: auto;
+		}
+
+		.loading-text, .plates {
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.loading-spinner {
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border: 4px solid #ccc;
+			border-top-color: #777;
+			border-radius: 50%;
+			animation: spin 1s ease-in-out infinite;
+			min-width: 12.5%;
+		}
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		.loading-cancel {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			color: #333;
+			cursor: pointer;
+		}
+
+		.plates {
+			margin: 20;
+			padding: 0;
+			text-align: left;
+			list-style: none;
+			max-height: 200px;
+			overflow-y: auto;
+		}
+
+		.plates li {
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			padding: 10px 0;
+			font-weight: 100;
+			display: flex;
+		}
+
 		
+
 	</style>
 </head>
 <body>
@@ -58,11 +134,24 @@
 <h1>欢迎查询数据</h1>
 
 <form>
-  <label for="latitude">经度</label>
-  <input type="text" id="latitude" name="latitude" placeholder="请输入经度">
+	<label for="area">查询地区</label>
+  <select type="file" name="area"  id="areaSelect" tabindex="-1" onchange="handleSelectChange()">
+	<option value="1" selected>北京</option>
+	<option value="2">河北</option>
+  </select>
+  <label for="left_top_latitude">左上经度</label>
+  <input type="text" id="left_top_latitude" name="left_top_latitude" placeholder="请输入经度">
 
-  <label for="longitude">纬度</label>
-  <input type="text" id="longitude" name="longitude" placeholder="请输入纬度">
+  <label for="left_top_longitude">左上纬度</label>
+  <input type="text" id="left_top_longitude" name="left_top_longitude" placeholder="请输入纬度">
+
+  <label for="right_bottom_latitude">右下经度</label>
+  <input type="text" id="right_bottom_latitude" name="right_bottom_latitude" placeholder="请输入经度">
+
+  <label for="right_bottom_longitude">右下纬度</label>
+  <input type="text" id="right_bottom_longitude" name="right_bottom_longitude" placeholder="请输入纬度">
+
+  
   
   <label for="date">开始日期</label>
   <input type="date" id="date" name="date" placeholder="请输入开始日期" min="2022-04-01" max="2023-05-01" tabindex="-1">
@@ -70,11 +159,7 @@
   <label for="days">查询天数</label>
   <input type="number" id="days" name="days" placeholder="请输入查询天数" max="31" min="1">
 
-  <label for="area">查询地区</label>
-  <select type="file" name="area"  id="areaSelect" tabindex="-1">
-	<option value="1" selected>北京</option>
-	<option value="2">河北</option>
-  </select>
+  
 
   <button id="submit-btn" type="submit" onclick="checkInput">查询</button>
   
@@ -84,26 +169,91 @@
   </div>
   
 </form>
+<!-- 浮窗 -->
+<div id="loadingContainer" class="loading-container" style="display: none;">
+	<div class="loading-box">
+	  <ul class="plates">
+		<li>Loading...</li>
+		</ul>
+	  <div class="loading-spinner"></div>
+	  <span class="loading-cancel">X</span>
+	</div>
+  </div>
+
 <script src="yanxuan/js/jquery-3.2.1.min.js"></script>
 <script>
 	const inputs = document.querySelectorAll('input');
 	var selectBox = document.getElementById("areaSelect");
+    const itemsList = document.querySelector('.plates');
 
 	const data = {};
 
-	const submitBtn = document.querySelector('#submit-btn');
+	const result = ['Loading...'];
 
+	const submitBtn = document.querySelector('#submit-btn');
+	// 获取浮窗和进度条元素
+	const loading = document.querySelector('#loadingContainer');
+	// const progress = document.getElementById('progress');
+	const cancelButton = document.querySelector('.loading-cancel');
+
+	console.log(cancelButton);
+	// 处理取消按钮的点击事件
+	cancelButton.addEventListener('click', function(event) {
+		loading.style.display = 'none';
+	});
 	submitBtn.addEventListener('click', function(event) {
 		event.preventDefault(); // 阻止表单默认提交事件
 		checkInput();
 	});
+
+	function handleSelectChange() {
+		const areaSelect = document.getElementById("areaSelect");
+		const leftTopLatitudeInput = document.getElementById('left_top_latitude');
+		const leftTopLongitudeInput = document.getElementById('left_top_longitude');
+		const rightBottomLatitudeInput = document.getElementById('right_bottom_latitude');
+		const rightBottomLongitudeInput = document.getElementById('right_bottom_longitude');
+		let latLngInput = [
+			leftTopLatitudeInput,
+			leftTopLongitudeInput,
+			rightBottomLatitudeInput,
+			rightBottomLongitudeInput];
+		const latLngLabels = document.querySelectorAll('label[for^="left_top"], label[for^="right_bottom"]');
+
+		if (areaSelect.value === "2") {
+			latLngLabels.forEach((label) => {
+				console.log(label);
+				label.style.display = "none";
+			});
+			latLngInput.forEach((label) => {
+				console.log(label);
+				label.style.display = "none";
+			});
+		} else {
+			latLngLabels.forEach((label) => {
+				label.style.display = "block";
+			});
+			latLngInput.forEach((label) => {
+				label.style.display = "block";
+			});
+		}
+	}
+	function populateList(plates = [], palatesList) {
+        palatesList.innerHTML = result.map((plate, i) => {
+            return `
+                <li>
+                    <span for="item${i}">${plate}</span>
+                </li>
+            `
+        }).join('');
+    }
+
 	function checkInput() {
 		inputs.forEach(input => {
 			data[input.name] = input.value;
 		});
 		data[selectBox.name] = selectBox.value;
 		// console.log(data);
-		msg = `您将要查询的数据信息为\n经度:${data["latitude"]}\n纬度:${data["longitude"]}\n开始日期:${data["date"]}\n查询天数:${data["days"]}\n查询地区:${data["area"]==1?"北京":"河北"}。\n是否执行此查询操作？`;
+		msg = `您将要查询的数据信息为\n左上经度:${data["left_top_latitude"]}\n左上纬度:${data["left_top_longitude"]}\n右下经度:${data["right_bottom_latitude"]}\n右下纬度:${data["right_bottom_longitude"]}\n开始日期:${data["date"]}\n查询天数:${data["days"]}\n查询地区:${data["area"]==1?"北京":"河北"}。\n是否执行此查询操作？`;
 
 		
 		if(confirm(msg)){
@@ -113,58 +263,42 @@
 		} else {
 			// 用户点击了取消，不执行任何操作
 			console.log('用户点击了取消');
-			requestData1(data);
+			//requestData1(data);
 		}
 	}
 	// 网络请求
 	function requestData(params) {
-		// let xhr = new XMLHttpRequest();
-
-		// let url = 'http://localhost:8011/traffic/getResult';
-		// xhr.open('POST', url);
-		// xhr.setRequestHeader('Content-Type', 'application/json');
-		// xhr.send(JSON.stringify(params));
-		// console.table(JSON.stringify(params));
-		// xhr.onload = function() {
-		// 	if (xhr.status === 200) {
-		// 		console.log(xhr.responseText);
-		// 	} else {
-		// 		console.error('Request failed.  Returned status of ' + xhr.status);
-		// 	}
-		// };
 		console.log(JSON.stringify(params));
+		// 显示浮窗
+		loading.style.display = 'flex';
+		if (result.length > 1) {
+			result.splice(1);
+		}
+		populateList(result, itemsList);
+		
 		$.ajax({
 			url: 'http://localhost:8011/traffic/getResult',
 			type: 'POST',
-			dataType: 'json',
+			// dataType: 'json',
 			contentType: 'application/json;charset=UTF-8',
 			data: JSON.stringify(params),
 			success: function (data) {
 				console.log(data);
+				// 隐藏浮窗
+  				// loading.style.display = 'none';
+				data.split('\n').map(str => {
+					return result.push(str);
+				});
+				
+				console.log(result);
+				populateList(result, itemsList);
+
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
 				console.log(textStatus, errorThrown);
 			}
 		});
-		// fetch('http://localhost:8011/traffic/getResult', {
-		// 	method: 'POST',
-		// 	body: JSON.stringify(params),
-		// 	headers: {
-		// 		'Content-Type': 'application/json'
-		// 	}
-		// 	}).then(response => response.json())
-		// 	.then(data => {
-		// 		try {
-		// 			const result = JSON.parse(data);
-		// 			// 对返回的数据进行处理
-		// 			console.log(result);
-		// 		} catch (e) {
-		// 			console.error('返回的 JSON 数据格式有问题：', e);
-		// 		}
-		// 	})
-		// 	.catch(error => {
-		// 		console.error(error);
-		// 	});
+		
 	}
 	
 	// 网络请求
